@@ -13,8 +13,11 @@ function App() {
     }
   )
   }, [])
+  //return (<div className="card">
+  //  {typeof resp.data === "undefined" ? (<p>loading</p>) : (resp.data.service.metrics[0].dimensions.map((el, i) => (<p key={i}>{el.value}</p>))) }
+  //  </div>)
   return (<div className="card">
-    {typeof resp.data === "undefined" ? (<p>loading</p>) : (resp.data.service.metrics[0].dimensions.map((el, i) => (<p key={i}>{el}</p>))) }
-    </div>)
+  {typeof resp.data === "undefined" ? (<p>loading</p>) : (resp.data.service.metrics.map((el , i) => (<p key={i}>{el.dimensions[0].value}</p>)))}
+  </div>)
 }
 export default App;
