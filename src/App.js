@@ -13,6 +13,8 @@ function App() {
     }
   )
   }, [])
-  return (<div>{resp.data.service.name}</div>)
+  return (<div className="card">
+    {typeof resp.data === "undefined" ? (<p>loading</p>) : (<p>{resp.data.service.name}</p>) }
+    </div>)
 }
 export default App;
